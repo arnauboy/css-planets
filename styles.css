@@ -1,4 +1,4 @@
-body   {
+body {
     margin: 0;
     padding: 0;
     display: flex;
@@ -19,22 +19,182 @@ body   {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: red;
     transform: scaleX(0.2);
 }
 
+.planet:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+}
+
 #first-planet {
-    background-color: blue;
+    animation: firstPlanetRender 12s infinite linear;
+}
+
+#first-planet:after {
+    animation: firstPlanetRenderRotator 12s infinite linear;
+}
+
+@keyframes firstPlanetRender {
+    0% {
+        background: linear-gradient(-90deg,  rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%);
+    }
+    12% {
+        background: linear-gradient(-90deg,  rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%);
+    }
+    12.1% {
+        background: linear-gradient(90deg,  rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%);
+    }
+    62% {
+        background: linear-gradient(90deg,  rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%);
+    }
+    62.1% {
+        background: linear-gradient(-90deg,  rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%);
+    }
+    100% {
+        background: linear-gradient(-90deg,  rgb(86, 86, 253) 50%, rgb(60, 60, 175) 50%);
+    }
+}
+
+@keyframes firstPlanetRenderRotator {
+    0% {
+        transform: scaleX(0.2);
+        background: rgb(86, 86, 253);
+    }
+    12% {
+        transform: scaleX(1);
+        background: rgb(86, 86, 253);
+    }
+    37% {
+        transform: scaleX(0);
+        background: rgb(86, 86, 253);
+    }
+    37.1% {
+        transform: scaleX(0);
+        background: rgb(60, 60, 175);
+    }
+    62%{
+        transform: scaleX(1);
+        background: rgb(60, 60, 175);
+    }
+    87% {
+        transform: scaleX(0);
+        background: rgb(60, 60, 175);
+    }
+    87.1% {
+        transform: scaleX(0);
+        background: rgb(86, 86, 253);
+    }
+    100% {
+        transform: scaleX(0.2);
+        background: rgb(86, 86, 253);
+    }
 }
 
 #second-planet {
-    background-color: red;
+    animation: secondPlanetRender 12s infinite linear;
+}
 
+#second-planet:after {
+    animation: secondPlanetRenderRotater 12s infinite linear;
+}
+
+@keyframes secondPlanetRender {
+    0% {
+        background: linear-gradient(90deg,rgb(95,185,85) 50%, rgb(65, 128, 65) 50%);
+    }
+    40% {
+        background: linear-gradient(90deg,rgb(95,185,85) 50%, rgb(65, 128, 65) 50%);
+    }
+    40.1% {
+        background: linear-gradient(-90deg,rgb(95,185,85) 50%, rgb(65, 128, 65) 50%);
+    }
+    90% {
+        background: linear-gradient(-90deg,rgb(95,185,85) 50%, rgb(65, 128, 65) 50%);
+    }
+    90.1% {
+        background: linear-gradient(90deg,rgb(95,185,85) 50%, rgb(65, 128, 65) 50%);
+    }
+    100% {
+        background: linear-gradient(90deg,rgb(95,185,85) 50%, rgb(65, 128, 65) 50%);
+    }
+}
+
+@keyframes secondPlanetRenderRotater {
+ 0% {
+    transform: scaleX(0.5);
+    background-color: rgb(95,185,85);
+ }
+ 15% {
+    transform: scaleX(0);
+    background-color: rgb(95,185,85);
+ }
+ 15.1% {
+    transform: scaleX(0);
+    background-color: rgb(65,128,65);
+ }
+ 40% {
+    transform: scaleX(1);
+    background-color: rgb(65,128,65);
+ }
+ 65% {
+    transform: scaleX(0);
+    background-color: rgb(65,128,65);
+ }
+ 65.1% {
+    transform: scaleX(0);
+    background-color: rgb(95,128,85);
+ }
+ 90% {
+    transform: scaleX(1);
+    background-color: rgb(95,128,85);
+ }
+ 100% {
+    transform: scaleX(0.5);
+    background-color: rgb(95,185,85);
+ }
 }
 
 #third-planet {
-    background-color: green;
+    animation: thirdPlanetRender 12s infinite linear;
+}
 
+#third-planet:after {
+    animation: thirdPlanetRenderRotater 12s infinite linear;
+
+}
+
+@keyframes thirdPlanetRender {
+    0% {
+        background:  linear-gradient(-90deg, rgb(255,66,113) 50%, rgb(168,47,77) 50%);
+    }
+    49% {
+        background:  linear-gradient(-90deg, rgb(255,66,113) 50%, rgb(168,47,77) 50%);
+    }
+    49.1% {
+        background:  linear-gradient(90deg, rgb(255,66,113) 50%, rgb(168,47,77) 50%);
+    }
+    99% {
+        background:  linear-gradient(90deg, rgb(255,66,113) 50%, rgb(168,47,77) 50%);
+    }
+    99.1% {
+        background:  linear-gradient(-90deg, rgb(255,66,113) 50%, rgb(168,47,77) 50%);
+    }
+    100% {
+        background:  linear-gradient(-90deg, rgb(255,66,113) 50%, rgb(168,47,77) 50%);
+    }
+}
+
+@keyframes thirdPlanetRenderRotater {
+    0% { transform: scaleX(1); background-color: rgb(168,47,77);}
+    25% { transform: scaleX(0); background-color: rgb(168,47,77);}
+    25.1% { transform: scaleX(0); background-color: rgb(255,66,113);}
+    49% { transform: scaleX(1); background-color: rgb(255,66,113);}
+    75% { transform: scaleX(0); background-color: rgb(255,66,113);}
+    75.1% { transform: scaleX(0); background-color: rgb(168,47,77);}
+    100% { transform: scaleX(1); background-color: rgb(168,47,77);}
 }
 
 .route {
